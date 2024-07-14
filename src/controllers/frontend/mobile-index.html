@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Mobile Details</title>
+</head>
+<body>
+    <h1>Upload Mobile Details</h1>
+    <form action="/mobile-upload" method="POST" enctype="multipart/form-data">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="RAM">RAM:</label><br>
+        <input type="text" id="RAM" name="RAM"><br><br>
+
+        <label for="storage">Storage:</label><br>
+        <input type="text" id="storage" name="storage"><br><br>
+
+        <label for="price">Price:</label><br>
+        <input type="number" id="price" name="price"><br><br>
+
+        <label for="camera">Camera:</label><br>
+        <input type="text" id="camera" name="camera"><br><br>
+
+        <label for="file">Upload Photo:</label><br>
+        <input type="file" id="file" name="file"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Earphone Details</title>
+</head>
+<body>
+    <h1>Upload Earphone Details</h1>
+    <form action="/earphone-upload" method="POST" enctype="multipart/form-data">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="file">Image/Photo:</label><br>
+        <input type="file" id="file" name="file" accept="image/*" required><br><br>
+
+        <label for="bluetooth">Bluetooth:</label><br>
+        <input type="text" id="bluetooth" name="bluetooth"><br><br>
+
+        <label for="battery">Battery Life:</label><br>
+        <input type="text" id="battery" name="battery" required><br><br>
+
+        <label for="colour">Colour:</label><br>
+        <input type="text" id="colour" name="colour" required><br><br>
+
+        <label for="price">Price:</label><br>
+        <input type="number" id="price" name="price" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
