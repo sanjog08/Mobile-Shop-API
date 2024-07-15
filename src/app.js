@@ -23,7 +23,9 @@ app.get('/', (req, res) => {
 app.get('/mobile-index', mobCon.index)
 app.post('/mobile-upload', upload.single('file'), mobCon.uploads)
 app.get('/mobile-one/:id', mobCon.getMobile)
+app.get('/mobile-page', mobCon.oneMobilePage)
 app.get('/mobile-all', mobCon.getAllMobiles)
+app.get('/image/:id', mobCon.singleImg)
 
 // 2nd hand mobile routes
 app.get('/mobile2-index', mob2Con.index2)

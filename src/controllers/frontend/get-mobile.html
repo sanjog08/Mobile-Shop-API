@@ -1,3 +1,68 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Details</title>
+</head>
+<body>
+    <div id="mobileDetails">
+        <h1>Mobile Details</h1>
+        <input type="text" id="mobileIdInput" placeholder="Enter Mobile ID">
+        <button id="loadMobile">Load</button>
+        <div id="mobileInfo">
+            
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            document.getElementById('loadMobile').addEventListener('click', async () => {
+                const mobileId = document.getElementById('mobileIdInput').value.trim();
+                try {
+                    if (!mobileId) {
+                        throw new Error('Please enter a valid Mobile ID');
+                    }
+                    
+                    console.log(`Fetching data for mobile ID: ${mobileId}`);
+                    const response = await fetch(`/mobile-one/${mobileId}`);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    const mobileData = await response.json();
+                    console.log('Received mobile data:', mobileData);
+                    
+                    const mobileInfoDiv = document.getElementById('mobileInfo');
+                    const html = `
+                        <h2>${mobileData.name}</h2>
+                        <p><strong>RAM:</strong> ${mobileData.RAM}</p>
+                        <p><strong>Storage:</strong> ${mobileData.storage}</p>
+                        <p><strong>Price:</strong> ${mobileData.price}</p>
+                        <p><strong>Camera:</strong> ${mobileData.camera}</p>
+                        <img src="data:image/jpeg;base64,${mobileData.file}" alt="${mobileData.name}" />
+                    `;
+                    mobileInfoDiv.innerHTML = html;
+                } catch (error) {
+                    console.error('Error fetching mobile data:', error);
+                    const mobileInfoDiv = document.getElementById('mobileInfo');
+                    mobileInfoDiv.innerHTML = `<p>Error fetching mobile data. Please try again later.</p>`;
+                }
+            });
+        });
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +73,83 @@
 <body>
     <div id="mobileDetails">
         <h1>Mobile Details</h1>
+        <input type="text" id="mobileIdInput" placeholder="Enter Mobile ID">
+        <button id="loadMobile">Load</button>
+        <div id="mobileInfo">
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            document.getElementById('loadMobile').addEventListener('click', async () => {
+                const mobileId = document.getElementById('mobileIdInput').value.trim();
+                try {
+                    if (!mobileId) {
+                        throw new Error('Please enter a valid Mobile ID');
+                    }
+                    
+                    console.log(`Fetching data for mobile ID: ${mobileId}`);
+                    const response = await fetch(`/mobile-one/${mobileId}`);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    const mobileData = await response.json();
+                    console.log('Received mobile data:', mobileData);
+                    
+                    const mobileInfoDiv = document.getElementById('mobileInfo');
+                    const html = `
+                        <h2>${mobileData.name}</h2>
+                        <p><strong>RAM:</strong> ${mobileData.RAM}</p>
+                        <p><strong>Storage:</strong> ${mobileData.storage}</p>
+                        <p><strong>Price:</strong> ${mobileData.price}</p>
+                        <p><strong>Camera:</strong> ${mobileData.camera}</p>
+                        <img src="data:image/jpeg;base64,${mobileData.file.toString('base64')}" alt="${mobileData.name}" />
+                    `;
+                    mobileInfoDiv.innerHTML = html;
+                } catch (error) {
+                    console.error('Error fetching mobile data:', error);
+                    const mobileInfoDiv = document.getElementById('mobileInfo');
+                    mobileInfoDiv.innerHTML = `<p>Error fetching mobile data. Please try again later.</p>`;
+                }
+            });
+        });
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Details</title>
+</head>
+<body>
+    <div id="mobileDetails">
+        <h1>Mobile Details</h1>
+        <input type="text" id="mobileIdInput" placeholder="Enter Mobile ID">
+        <button id="loadMobile">Load</button>
         <div id="mobileInfo">
             <!-- Mobile data will be dynamically added here -->
         </div>
@@ -15,31 +157,37 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
-            const mobileId = '6693ccd7ff43dadf307a7410'; // Replace with actual mobile _id
-            try {
-                console.log(`Fetching data for mobile ID: ${mobileId}`);
-                const response = await fetch(`/mobile-one/${mobileId}`);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
+            document.getElementById('loadMobile').addEventListener('click', async () => {
+                const mobileId = document.getElementById('mobileIdInput').value.trim();
+                try {
+                    if (!mobileId) {
+                        throw new Error('Please enter a valid Mobile ID');
+                    }
+                    
+                    console.log(`Fetching data for mobile ID: ${mobileId}`);
+                    const response = await fetch(`/mobile-one/${mobileId}`);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    const mobileData = await response.json();
+                    console.log('Received mobile data:', mobileData);
+                    
+                    const mobileInfoDiv = document.getElementById('mobileInfo');
+                    const html = `
+                        <h2>${mobileData.name}</h2>
+                        <p><strong>RAM:</strong> ${mobileData.RAM}</p>
+                        <p><strong>Storage:</strong> ${mobileData.storage}</p>
+                        <p><strong>Price:</strong> ${mobileData.price}</p>
+                        <p><strong>Camera:</strong> ${mobileData.camera}</p>
+                        <img src="data:image/jpeg;base64,${mobileData.file}" alt="${mobileData.name}" />
+                    `;
+                    mobileInfoDiv.innerHTML = html;
+                } catch (error) {
+                    console.error('Error fetching mobile data:', error);
+                    const mobileInfoDiv = document.getElementById('mobileInfo');
+                    mobileInfoDiv.innerHTML = `<p>Error fetching mobile data. Please try again later.</p>`;
                 }
-                const mobileData = await response.json();
-                console.log('Received mobile data:', mobileData);
-
-                const mobileInfoDiv = document.getElementById('mobileInfo');
-                const html = `
-                    <h2>${mobileData.name}</h2>
-                    <p><strong>RAM:</strong> ${mobileData.RAM}</p>
-                    <p><strong>Storage:</strong> ${mobileData.storage}</p>
-                    <p><strong>Price:</strong> ${mobileData.price}</p>
-                    <p><strong>Camera:</strong> ${mobileData.camera}</p>
-                    <img src="data:image/jpeg;base64,${mobileData.file}" alt="${mobileData.name}" />
-                `;
-                mobileInfoDiv.innerHTML = html;
-            } catch (error) {
-                console.error('Error fetching mobile data:', error);
-                const mobileInfoDiv = document.getElementById('mobileInfo');
-                mobileInfoDiv.innerHTML = `<p>Error fetching mobile data. Please try again later.</p>`;
-            }
+            });
         });
     </script>
 </body>
