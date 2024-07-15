@@ -1,6 +1,9 @@
 const mogoose = require("mongoose");
+const dotenv = require('dotenv');
+dotenv.config({path: './src/db/.env' });
 
-mogoose.connect("mongodb+srv://isanjog:database@cluster3.y8cuj7v.mongodb.net/shop-products")
+
+mogoose.connect(process.env.URI)
 .then(() => {
     console.log("database connected😊");
 }).catch((err) => {
